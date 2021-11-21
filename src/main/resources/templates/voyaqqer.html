@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Hello VoyaqqerSKaitai!</title>
+</head>
+<body>
+<h1>Hello VoyaqqerSKaitai!</h1>
+	<form method="post" action="voyaqqer">
+		入力：<input type="text" name="tweet"/>
+		<input type="submit" value="click"/>
+	</form>
+	<br/>
+	<form method="post" action="/Voyaqqer/db">
+		VoyaqqerユーザID:<input type="text" name="text2" th:value="${text2_value}" />
+		<input type="submit" value="click" />
+	</form>
+</body>
+</html>
