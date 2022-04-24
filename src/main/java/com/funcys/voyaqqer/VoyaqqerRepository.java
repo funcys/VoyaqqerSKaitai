@@ -16,8 +16,8 @@ public class VoyaqqerRepository {
 
 		//SELECT文
 		String query = "select *"
-				+ "from user"
-				+ "where id=?";
+				+ " from user"
+				+ " where userId=?";
 
 		//検索実行
 		Map<String,Object> user = jdbcTemplate.queryForMap(query,id);

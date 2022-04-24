@@ -14,10 +14,17 @@ public class VoyaqqerController {
 	private VoyaqqerService service;
 
 	@GetMapping("/voyaqqer")
-	public String getHello() {
+	public String getVoyaqqer() {
 		//voyaqqer.htmlに画面遷移
 		return "voyaqqer";
 	}
+	/*
+	@GetMapping("/hello")
+	public String getHello() {
+		//hello.htmlに画面遷移
+		return "hello";
+	}
+	*/
 	@PostMapping("/voyaqqer")
 	public String postRequest(@RequestParam("tweet") String str, Model model) {
 
@@ -25,10 +32,10 @@ public class VoyaqqerController {
 		model.addAttribute("tweet",str);
 
 		//response.htmlに画面遷移
-		return "response";
+		return "voyaqqer/response";
 	}
 	@PostMapping("/voyaqqer/db")
-	public String postDbRequest(@RequestParam("text2")String id,Model model) {
+	public String postDbRequest(@RequestParam("tweet2")String id,Model model) {
 
 		//1件検索
 		User user = service.getUser(id);

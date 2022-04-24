@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class VoyaqqerService {
+
 	@Autowired
 	private VoyaqqerRepository repository;
 
@@ -16,15 +17,15 @@ public class VoyaqqerService {
 		Map<String,Object> map = repository.findById(id);
 
 		//Mapから値を取得
-		String userId = (String)map.get("id");
-		String name = (String)map.get("name");
-		int age = (Integer)map.get("age");
+		String userId = (String)map.get("userId");
+		String userName = (String)map.get("userName");
+		int userAge = (Integer)map.get("userAge");
 
 		//Userクラスに値をセット
 		User user = new User();
 		user.setUserId(userId);
-		user.setUserName(name);
-		user.setUserAge(age);
+		user.setUserName(userName);
+		user.setUserAge(userAge);
 
 		return user;
 
